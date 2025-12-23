@@ -9,8 +9,8 @@ from collections import defaultdict
 if __name__=="__main__":
     # Step1. 数字準備
     session=ddb.session()
-    session.connect("localhost",8848,"admin","123456")
-    pool=ddb.DBConnectionPool("localhost",8848,10,"admin","123456")
+    session.connect("8.152.192.31",8848,"admin","123456")
+    pool=ddb.DBConnectionPool("8.152.192.31",8848,10,"admin","123456")
     df: pd.DataFrame() = session.run("""
     select kana_str,kana_pair,kanji,rensou_kanji,rensou_kana from loadTable("dfs://JP","word") where regexCount(rensou_kana,"）")==0 and regexCount(rensou_kana,"（")==0 and strlenu(rensou_kanji)<=3
     """)

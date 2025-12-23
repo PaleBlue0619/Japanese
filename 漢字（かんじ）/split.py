@@ -34,6 +34,6 @@ if __name__=="__main__":
     result_df = pd.DataFrame(mst_edge_sets)
     result_df.to_excel(r"../汉字.xlsx",index=None)
 
-    # # MST for each component
-    # for i, node_set in enumerate(mst_node_sets, 1):
-    #     print(f"Component {i}: {node_set}")
+    # MST for each component
+    for i, node_set in enumerate(mst_node_sets, 1):
+        print(f"Component {i}: {node_set}")

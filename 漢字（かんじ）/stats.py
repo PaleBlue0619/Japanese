@@ -87,8 +87,8 @@ def processing(df, kana_str) -> Dict:
 
 if __name__ == "__main__":
     session=ddb.session()
-    session.connect("localhost",8848,"admin","123456")
-    pool=ddb.DBConnectionPool("localhost",8848,10,"admin","123456")
+    session.connect("8.152.192.31",8848,"admin","123456")
+    pool=ddb.DBConnectionPool("8.152.192.31",8848,10,"admin","123456")
     create_database(session,"dfs://JP","word")
     appender = ddb.PartitionedTableAppender(dbPath="dfs://JP",
                                             tableName="word",
